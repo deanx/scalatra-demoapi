@@ -10,8 +10,8 @@ class MailListServletSpec extends ScalatraSpec {
   GET / on MailListServlet
     returns status 200           $getRoot200
 
-  POST / on MailListServlet
-  	returns status 200			$postRoot200
+  GET /send on MailListServlet
+  	returns status 200			$getSend200
 """
 
 
@@ -21,7 +21,7 @@ class MailListServletSpec extends ScalatraSpec {
     status must_== 200
   }
 
-  def postRoot200 = post("/") {
+  def getSend200 = get("/send?email=alex@deanx.com.br") {
   	status must_==200
   }
 }
