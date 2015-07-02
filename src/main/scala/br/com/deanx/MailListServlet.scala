@@ -46,14 +46,14 @@ class MailListServlet extends UnearStack {
       </div>""",
       text = "",
       subject = "subject test",
-      from_email = "scamandrill@test.com",
-      from_name = "Scamandrill",
+      from_email = "alex@deanx.com.br",
+      from_name = "Alex Costa",
       to = List(MTo("alex@deanx.com.br")),
       bcc_address = "",
-      tracking_domain = "domain1",
-      signing_domain = "domain_sign",
+      tracking_domain = "scala-mandrill",
+      signing_domain = "scalatra-sign",
       return_path_domain = "Alex Costa",
-      tags = List("exampletag1", "exampletag2")
+      tags = List("scalatra")
     )
 
     MandrillAsyncClient.messagesSend(MSendMessage(message=msg, key="r0oO5JSClGGoB4XmPNTeJA"))
