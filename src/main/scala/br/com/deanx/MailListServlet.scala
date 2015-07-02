@@ -18,7 +18,7 @@ class MailListServlet extends UnearStack {
   }
 
   get("/send") {
-    {params("email")}
+    val email = {params("email")}
 
   /*  val svc = dispatch.url("https://mandrillapp.com/api/1.0/send")
     val myPost = svc.POST
@@ -35,7 +35,7 @@ class MailListServlet extends UnearStack {
     val msg = new MSendMsg(
       html = """
       <div style="border:1px solid black;border-radius:4px;padding:10px">
-      <form method="post" action="/">
+      <form method="post" action="http://ec2-52-26-222-71.us-west-2.compute.amazonaws.com:8080/vote">
         <h4>How often you think about to kill your developer?</h4>
         <input type="radio" name="dev" value="ed">> Every day<br/>
         <input type="radio" name="dev" value="eh">> Every hour<br/>
@@ -45,10 +45,10 @@ class MailListServlet extends UnearStack {
       </form>
       </div>""",
       text = "",
-      subject = "subject test",
+      subject = "A question from our API",
       from_email = "alex@deanx.com.br",
       from_name = "Alex Costa",
-      to = List(MTo("alex@deanx.com.br")),
+      to = List(MTo(email)),
       bcc_address = "",
       tracking_domain = "scala-mandrill",
       signing_domain = "scalatra-sign",
