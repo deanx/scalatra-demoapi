@@ -1,0 +1,70 @@
+#header-text {
+  font-family:FontAwesome;
+  padding-bottom:15px;
+  padding-top:15px;
+}
+
+#header {
+  background-color:#3C4985;
+  color:#FFF;
+  border-radius:0px 0px 5px 5px;
+  padding:50px;
+}
+
+.container {
+  border:1px solid #666;
+}
+
+.ask {
+  font-family:FontAwesome;
+  display:block;
+  padding:5px;
+  color:#E68863;
+  font-size:1.6em;
+  font-weight:bold;
+}
+
+#motivation-list {
+  background-color:#E5E5E5;
+  padding:40px;
+  border-radius:5px 5px 0px 0px;
+  margin:0px;
+}
+
+.motivation-item {
+  padding:5px;
+  color:#1082B3;
+
+}
+
+#container-form {
+  padding:40px;
+}
+
+.email-field {
+  height:2.5em;
+  width:21.8em;
+  margin:0px;
+  padding-right:0px;
+  display:inline;
+  clear:both;
+}
+
+.form-button {
+  margin:0px;
+  height:3em;
+  padding:10px;
+  display:inline;
+  clear:both;
+}
+
+.text-form-button {
+  padding:4px;
+}
+
+.notices {
+  display:inline-block;
+  font-family:FontAwesome;
+  display:none;
+  font-size:1.0em;
+}

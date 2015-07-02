@@ -1,0 +1,17 @@
+-@ val title: String
+-@ val headline: String = title
+-@ val body: String
+
+!!! 5
+html(lang="en")
+  head
+    title= title
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+    script(src="js/kickstart.js")
+
+    link(rel="stylesheet" href="css/kickstart.css" media="all")
+    link(rel="stylesheet" href="css/app.css")
+
+  body
+    .container(class="grid flex")
+      != body

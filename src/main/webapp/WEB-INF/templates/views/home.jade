@@ -1,0 +1,33 @@
+- attributes("title") = "Scalatra: a tiny, Sinatra-like web framework for Scala"
+- attributes("headline") = "Welcome to Scalatra"
+
+ul.icons#motivation-list
+  li
+    i(class="fa fa-inbox")
+      span.motivation-item Don't need to know how to send an e-mail#
+  li
+    i(class="fa fa-money")
+      span.motivation-item Don't need to know how to invoice your clients#
+  li
+    i(class="fa fa-bomb")
+      span.motivation-item Don't need to deal with your programmer like a god#
+
+#header
+  h3#header-text.center What about ... JUST TO SELL your stuff?
+
+  #container-form.center
+    span.ask Why to have a software factory, if I just want a store?
+    span.form
+      input.email-field(placeholder="gimme your e-mail...")
+      button(class="medium green form-button")
+        i(class="fa fa-play-circle")
+          span.text-form-button and know how!
+    section#error(class="center notice error notices")
+      i(class="fa fa-remove fa-large")
+      span Wrong e-mail
+      a(href="#close" class="fa fa-remove close-warning")
+    section#success(class="center notice success notices")
+      if(class="fa fa-check fa-large")
+      span E-mail sent! Thanks!!!
+      a(href="#close" class="fa fa-remove close-warning")
+script(src="js/app.js")
