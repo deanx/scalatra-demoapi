@@ -41,7 +41,7 @@
   padding:40px;
 }
 
-.email-field {
+.input-field {
   height:2.5em;
   width:21.8em;
   margin:0px;
@@ -67,4 +67,14 @@
   font-family:FontAwesome;
   display:none;
   font-size:1.0em;
+}
+
+.title-list {
+  font-family:FontAwesome;
+  font-weight:bold;
+}
+
+.item-list {
+  font-family:FontAwesome;
+  font-size:0.9em;
 }

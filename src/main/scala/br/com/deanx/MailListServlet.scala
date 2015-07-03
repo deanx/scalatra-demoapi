@@ -4,12 +4,9 @@ import org.scalatra._
 import scalate.ScalateSupport
 import dispatch._
 import scala.concurrent.ExecutionContext.Implicits.global
-import com.joypeg.scamandrill.client.MandrillAsyncClient
-import com.joypeg.scamandrill.models.MSendMessage
-import com.joypeg.scamandrill.models.MTo
-import com.joypeg.scamandrill.models._
 import scala.io.Source._
-
+import br.com.deanx.service.RegistryService
+import br.com.deanx.models.Registry
 class MailListServlet extends UnearStack {
 
   get("/") {
@@ -19,43 +16,27 @@ class MailListServlet extends UnearStack {
 
   get("/send") {
     val email = {params("email")}
+    val name = {params("name")}
 
-  /*  val svc = dispatch.url("https://mandrillapp.com/api/1.0/send")
-    val myPost = svc.POST
-    myPost.addParameter("key","r0oO5JSClGGoB4XmPNTeJA")
+    val registry = new Registry(name, email)
+    registry.persist()
+    RegistryService.sendMailTo(registry)
+  }
 
-    val requester = dispatch.Http(svc OK as.String)
-    requester.onComplete { x =>
+  get("/vote") {
+    val token = {params("key")}
+    val vote = {params("vote")}
 
-    }
-    jade("/home")
-    */
+    new Registry().vote(vote,token);
 
+    contentType="text/html"
+    jade("/voted")
+  }
 
-    val msg = new MSendMsg(
-      html = """
-      <div style="border:1px solid black;border-radius:4px;padding:10px">
-      <form method="post" action="http://ec2-52-26-222-71.us-west-2.compute.amazonaws.com:8080/vote">
-        <h4>How often you think about to kill your developer?</h4>
-        <input type="radio" name="dev" value="ed">> Every day<br/>
-        <input type="radio" name="dev" value="eh">> Every hour<br/>
-        <input type="radio" name="dev" value="ad">> Already done!<br/>
-        <input type="submit" value="send"/>
-      </form>
-      </form>
-      </div>""",
-      text = "",
-      subject = "A question from our API",
-      from_email = "alex@deanx.com.br",
-      from_name = "Alex Costa",
-      to = List(MTo(email)),
-      bcc_address = "",
-      tracking_domain = "scala-mandrill",
-      signing_domain = "scalatra-sign",
-      return_path_domain = "Alex Costa",
-      tags = List("scalatra")
-    )
+  get("/list") {
+    new Registry().listAll()
 
-    MandrillAsyncClient.messagesSend(MSendMessage(message=msg, key="r0oO5JSClGGoB4XmPNTeJA"))
+    contentType="text/html"
+    jade("/list")
   }
 }

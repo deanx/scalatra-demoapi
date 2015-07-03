@@ -32,7 +32,8 @@ object UnearBuild extends Build {
         "org.scalatra" %% "scalatra-scalatest" % ScalatraVersion % "test",
         "javax.servlet" % "javax.servlet-api" % "3.1.0",
         "net.databinder.dispatch" %% "dispatch-core" % "0.11.2",
-        "com.github.dzsessona" %% "scamandrill" % "1.1.0"
+        "com.github.dzsessona" %% "scamandrill" % "1.1.0",
+        "org.mongodb" %% "casbah" % "2.8.1"
       ),
       scalateTemplateConfig in Compile <<= (sourceDirectory in Compile){ base =>
         Seq(

@@ -1,0 +1,18 @@
+- attributes("title") = "Registries and votes"
+- import br.com.deanx.models._
+- import br.com.deanx.helper._
+
+- var registry = new Registry().listAll
+
+p
+  span.col_4.title-list Name
+  span.col_4.title-list E-mail
+  span.col_4.title-list Vote
+
+- for(i <- registry)
+  p
+    span.col_4.item-list= i.get("name")
+    span.col_4.item-list= i.get("email")
+    span.col_4.item-list= if(null != i.get("vote")) RegistryHelper.voteFromAbbreviationToReadable(i.get("vote").toString) else "none yet!"
+
+script(src="js/app.js")
