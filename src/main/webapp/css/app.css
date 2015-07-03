@@ -26,15 +26,20 @@
 
 #motivation-list {
   background-color:#E5E5E5;
-  padding:40px;
+  padding: 40px 40px 100px 40px;
   border-radius:5px 5px 0px 0px;
   margin:0px;
+  width: 100%;
+}
+
+#motivation-list li {
+  float: left;
 }
 
 .motivation-item {
   padding:5px;
-  color:#1082B3;
-
+  color:#666;
+  font-size: 19px;
 }
 
 #container-form {
@@ -42,9 +47,9 @@
 }
 
 .input-field {
-  height:2.5em;
-  width:21.8em;
-  margin:0px;
+  height:3.5em;
+  width:25.8em;
+  margin:5px;
   padding-right:0px;
   display:inline;
   clear:both;
@@ -52,14 +57,15 @@
 
 .form-button {
   margin:0px;
-  height:3em;
-  padding:10px;
+  height:4em;
+  padding:20px;
   display:inline;
   clear:both;
 }
 
 .text-form-button {
   padding:4px;
+  font-size: 18px
 }
 
 .notices {
