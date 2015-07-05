@@ -24,9 +24,9 @@ object RegistryService {
       html = """
       <div style="border:1px solid black;border-radius:4px;padding:10px">
         <h4>How often you think about to kill your developer?</h4>
-        <p><a href="http://ec2-52-26-222-71.us-west-2.compute.amazonaws.com:8080/vote?vote=ed&key=token"> Every day</a></p>
-        <p><a href="http://ec2-52-26-222-71.us-west-2.compute.amazonaws.com:8080/vote?vote=eh&key=token"> Every hour</a></p>
-        <p><a href="http://ec2-52-26-222-71.us-west-2.compute.amazonaws.com:8080/vote?vote=ad&key=token"> Already done!</a></p>
+        <p><a href="http://52.24.71.1:8080/vote?vote=ed&key=token"> Every day</a></p>
+        <p><a href="http://52.24.71.1:8080/vote?vote=eh&key=token"> Every hour</a></p>
+        <p><a href="http://52.24.71.1:8080/vote?vote=ad&key=token"> Already done!</a></p>
       </div>""".replaceAll("token", token),
       text = "",
       subject = "A question from our API",
